@@ -1,0 +1,338 @@
+<!-- Group Name: Three Musketeers
+Team Members:
+•	Gautham Kumar Karamthot (G01481178)
+•	Aswini Chundu (G01478184)
+•	Devi Sri Prasad (G01460464)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Department Survey</title>
+  <!-- Bootstrap CSS for styling -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Body styles: light gray background */
+    body {
+      background-color: #f0f0f0;
+    }
+
+    /* Header container styles */
+    .header-container {
+	  position: relative;
+	  margin-bottom: 20px;
+	}
+
+	/* Main heading styles: dark green background with white text */
+	h1 {
+	  background-color: #006633;
+	  color: #ffffff;
+	  padding: 10px 20px;
+	  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  position: relative;
+	}
+
+	/* Header logo container styles: adds the George Mason University logo */
+	.header-logo-container {
+	  position: absolute;
+	  right: 20px;
+	  top: 10px;
+	  background-color: #ffffff;
+	  border-radius: 15px;
+	  padding: 5px;
+	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	/* Adjusts the size of the logo */
+	.header-logo {
+	  display: block;
+	  height: 35px;
+	}
+
+	/* Responsive adjustments for smaller screens */
+	@media (max-width: 768px) {
+	  h1 {
+		flex-direction: column;
+		text-align: center;
+	  }
+
+	  .header-logo-container {
+		position: static;
+		margin-top: 10px;
+	  }
+
+	  .header-logo {
+		margin: 0 auto;
+	  }
+	}
+
+    /* Form container styles: white background with padding and shadow */
+    .form-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Adds red asterisk to required fields */
+    .form-group.required label::after {
+      content: "*";
+      color: red;
+      margin-left: 5px;
+    }
+
+    /* Adds margin between form elements */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    /* Gold underline for section titles */
+    .gold-underline {
+      border-bottom: 3px solid #FFCC33;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    /* Aligns buttons horizontally with spacing between them */
+    .form-group.d-flex {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+	}
+
+	/* Submit button with GMU green */
+	.btn-submit {
+	  background-color: #006633;
+	  color: #ffffff;
+	}
+
+	/* Hover effect for submit button: changes to gold */
+	.btn-submit:hover {
+	  background-color: #FFCC33;
+	}
+
+	/* Clear button with gray background */
+	.btn-clear {
+	  background-color: #cccccc;
+	  color: #000000;
+	}
+
+	/* Hover effect for clear button */
+	.btn-clear:hover {
+	  background-color: #FFCC33;
+	  color: black;
+	}
+
+	/* Back to homepage button: pushes to the right */
+	.btn-back {
+	  background-color: #cccccc;
+	  color: #000000;
+	  margin-left: auto;
+	}
+
+	/* Hover effect for back button */
+	.btn-back:hover {
+	  background-color: #FFCC33;
+	  color: black;
+	}
+
+    /* Back to top button fixed at bottom right */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #006633;
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* Hover effect for back to top button */
+    .back-to-top:hover {
+      background-color: #FFCC33;
+	  color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to top button -->
+  <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">&#8679;</button>
+
+  <!-- Main container for the form and content -->
+  <div class="container mt-4">
+    <div class="header-container">
+      <!-- Page title with GMU logo -->
+      <h1 class="gold-underline">CS Department Feedback Survey
+        <div class="header-logo-container">
+          <!-- Placeholder for GMU logo -->
+          <img src="GMU.png" alt="George Mason University Logo" class="header-logo">
+        </div>
+      </h1>
+    </div>
+    <div class="form-container">
+      <!-- Start of the survey form -->
+      <form action="#" method="post">
+        <!-- First Name and Last Name fields -->
+	<div class="form-group required">
+	  <label for="first-name">First Name</label>
+	  <input type="text" id="first-name" name="first-name" class="form-control" placeholder="Enter your first name" required>
+	</div>
+	<div class="form-group required">
+	  <label for="last-name">Last Name</label>
+	  <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Enter your last name" required>
+	</div>
+
+        <!-- Address fields: street, city, state, zip -->
+        <div class="form-group required">
+          <label for="address">Street Address</label>
+          <input type="text" id="address" name="address" class="form-control" placeholder="1234 Main St" autocomplete="street-address" required>
+        </div>
+        <div class="form-group required">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" class="form-control" placeholder="Your City" autocomplete="address-level2" required>
+        </div>
+        <div class="form-group required">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" class="form-control" placeholder="Your State" autocomplete="address-level1" required>
+        </div>
+        <div class="form-group required">
+          <label for="zip">Zip Code</label>
+          <input type="text" id="zip" name="zip" class="form-control" placeholder="12345" autocomplete="postal-code" required>
+        </div>
+        <!-- Telephone, email, and URL fields -->
+        <div class="form-group required">
+          <label for="telephone">Telephone Number</label>
+          <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="123-456-7890" autocomplete="tel" required>
+        </div>
+        <div class="form-group required">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="example@example.com" autocomplete="email" required>
+        </div>
+        <div class="form-group required">
+          <label for="url">Website URL</label>
+          <input type="url" id="url" name="url" class="form-control" placeholder="https://example.com" autocomplete="url">
+        </div>
+        <!-- Date of survey -->
+        <div class="form-group required">
+          <label for="date">Date of Survey</label>
+          <input type="date" id="date" name="date" class="form-control" required>
+        </div>
+        <!-- Checkbox for campus feedback -->
+        <div class="form-group">
+          <label>What did you like most about the campus? (Select all that apply)</label><br>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="students" name="liked" value="students">
+            <label class="form-check-label" for="students">Students</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="location" name="liked" value="location">
+            <label class="form-check-label" for="location">Location</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="campus" name="liked" value="campus">
+            <label class="form-check-label" for="campus">Campus</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="atmosphere" name="liked" value="atmosphere">
+            <label class="form-check-label" for="atmosphere">Atmosphere</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="dorm-rooms" name="liked" value="dorm-rooms">
+            <label class="form-check-label" for="dorm-rooms">Dorm Rooms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sports" name="liked" value="sports">
+            <label class="form-check-label" for="sports">Sports</label>
+          </div>
+        </div>
+        <!-- Radio buttons for interest source -->
+        <div class="form-group required">
+          <label>How did you hear about the campus?</label><br>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="source" id="friends" value="friends" required>
+            <label class="form-check-label" for="friends">Friends</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="source" id="tv" value="tv" required>
+            <label class="form-check-label" for="tv">Television</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="source" id="internet" value="internet" required>
+            <label class="form-check-label" for="internet">Internet</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="source" id="other" value="other" required>
+            <label class="form-check-label" for="other">Other</label>
+          </div>
+        </div>
+        <!-- Comments section -->
+        <div class="form-group">
+          <label for="comments">Additional Comments</label>
+          <textarea class="form-control" id="comments" name="comments" rows="5" placeholder="Enter your comments here"></textarea>
+        </div>
+        <!-- Datalist for high-school graduation month -->
+        <div class="form-group">
+          <label for="grad-month">High-School Graduation Month</label>
+          <input class="form-control" list="months" id="grad-month" name="grad-month" placeholder="Choose or type">
+          <datalist id="months">
+            <option value="January">
+            <option value="February">
+            <option value="March">
+            <option value="April">
+            <option value="May">
+            <option value="June">
+            <option value="July">
+            <option value="August">
+            <option value="September">
+            <option value="October">
+            <option value="November">
+            <option value="December">
+          </datalist>
+        </div>
+        <!-- Dropdown list for recommendation -->
+        <div class="form-group">
+		  <label for="recommend">Would you recommend this campus?</label>
+		  <select class="form-control" id="recommend" name="recommend">
+			<option value="very-likely">Very Likely</option>
+			<option value="likely">Likely</option>
+			<option value="unlikely">Unlikely</option>
+		  </select>
+		</div>
+		
+		<!-- Raffle field -->
+		<div class="form-group required">
+		  <label for="raffle">Enter at least 10 comma-separated numbers (1-100)</label>
+		  <input type="text" id="raffle" name="raffle" class="form-control" placeholder="Enter numbers like 1,2,3,..." pattern="^([1-9][0-9]?,){9,99}[1-9][0-9]?$" required>
+		  <small class="form-text text-muted">Enter at least ten numbers between 1 and 100, separated by commas.</small>
+		</div>
+	
+        <!-- Form buttons: Submit, Clear, and Back to Homepage -->
+        <div class="form-group d-flex">
+          <button type="submit" class="btn btn-submit">Submit</button>
+          <button type="reset" class="btn btn-clear">Cancel</button>
+          <a href="https://645asgnmt1.s3.amazonaws.com/bio.html" class="btn btn-back">Back to Homepage</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Footer Section -->
+  <footer>
+    Copyright © 2024 Created By <i><b>Gautham Kumar</b></i>. All Rights Reserved.
+  </footer>
+  
+</body>
+</html>
