@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	environment {
-		DOCKERHUB_PASS = credentials('docker-pass')
+		DOCKERHUB_PASS = credentials('Docker')
 		BUILD_TIMESTAMP = new Date().format("yyyyMMdd-HHmmss", TimeZone.getTimeZone("UTC"))
 	}
 	stages {
