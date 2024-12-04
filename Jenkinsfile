@@ -3,7 +3,6 @@ pipeline {
     environment {
         DOCKERHUB_PASS = credentials('Docker') // DockerHub credentials
         BUILD_TIMESTAMP = new Date().format("yyyyMMdd-HHmmss", TimeZone.getTimeZone("UTC")) // Use a timestamp for image tagging
-        PATH = "${env.PATH}:/usr/local/bin" // Fix PATH issue
     }
     stages {
         stage('Check Maven and Docker') {
