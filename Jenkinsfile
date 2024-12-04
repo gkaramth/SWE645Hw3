@@ -6,16 +6,19 @@ pipeline {
         PATH = "${env.PATH}:/usr/local/bin" // Fix PATH issue
     }
     stages {
+        stage('Check Maven and Docker') {
+            steps {
+                // Check if Maven and Docker are available
+                sh 'mvn -v'
+                sh 'docker --version'
+            }
+        }
         stage("Building the Spring Boot Application Image") {
             steps {
                 script {
                     // Fetch the current SCM and print the timestamp
                     checkout scm
                     echo "Build timestamp: ${BUILD_TIMESTAMP}"
-
-                    // Ensure Docker and Maven are available
-                    sh 'mvn -v'
-                    sh 'docker --version'
 
                     // Login to DockerHub
                     sh '''
