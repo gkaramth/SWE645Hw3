@@ -29,7 +29,7 @@ pipeline {
                     sh 'mvn clean package'
 
                     // Build the Docker image
-                    sh "docker build -t gkaramth/hw3:01-${BUILD_TIMESTAMP} ."
+                    sh "docker build -t gkaramth/hw3:1.0-${BUILD_TIMESTAMP} ."
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Push the image to DockerHub
-                    sh "docker push gkaramth/hw3:01-${BUILD_TIMESTAMP}"
+                    sh "docker push gkaramth/hw3:1.0-${BUILD_TIMESTAMP}"
                 }
             }
         }
@@ -47,7 +47,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
 
                     // Update the Kubernetes deployment with the new image
-                    sh "kubectl set image deployment/deployment-hw3 container-hw3=gkaramth/hw3:01-${BUILD_TIMESTAMP} -n default"
+                    sh "kubectl set image deployment/deployment-hw3 container-hw3=gkaramth/hw3:1.0-${BUILD_TIMESTAMP} -n default"
                 }
             }
         }
